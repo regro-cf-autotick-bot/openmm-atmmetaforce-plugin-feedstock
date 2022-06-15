@@ -10,7 +10,7 @@ source:
   sha256: e966b51b7d6935c97813c31d59e85499434b276a8f77f510984eb26dd1b7be09
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux64]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
