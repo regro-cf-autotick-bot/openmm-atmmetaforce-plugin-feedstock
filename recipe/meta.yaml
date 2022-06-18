@@ -30,7 +30,7 @@ requirements:
     - openmm
     - pthread-stubs
     - lxml
-    
+
   run:
     - python
     - numpy
@@ -61,9 +61,9 @@ about:
     - LICENSE
   summary: The Alchemical Transfer Method Plugin for OpenMM
   description: |
-     This plugin implements the Alchemical Transfer Potential (ATM) for the calculation
-     of absolute and relative binding free energies of molecular complexes
-     in OpenMM, a high performance toolkit for molecular simulation.
+    This plugin implements the Alchemical Transfer Potential (ATM) for the calculation
+    of absolute and relative binding free energies of molecular complexes
+    in OpenMM, a high performance toolkit for molecular simulation.
   doc_url: https://github.com/Gallicchio-Lab/async_re-openmm/tree/master/examples
   dev_url: https://github.com/Gallicchio-Lab/openmm-atmmetaforce-plugin.git
 
