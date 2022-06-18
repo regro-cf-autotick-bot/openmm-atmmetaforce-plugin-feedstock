@@ -1,5 +1,5 @@
 {% set name = "openmm-atmmetaforce-plugin" %}
-{% set version = "0.2.4.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e966b51b7d6935c97813c31d59e85499434b276a8f77f510984eb26dd1b7be09
+  sha256: d63f7cb8cbfd82d00058abc4cd598ce8e5a989ff2e9efec1674aa26661a7f341
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux64]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
