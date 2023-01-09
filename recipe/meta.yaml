@@ -11,7 +11,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [not linux64]
+  skip: true  # [not linux64 and not win64]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
     # TODO: Relax max_pin at version 1.0 / stable API
@@ -21,7 +21,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}  # [linux]
+    - {{ compiler('cuda') }}
+    - ninja # [win]
     - cmake
     - swig
 
