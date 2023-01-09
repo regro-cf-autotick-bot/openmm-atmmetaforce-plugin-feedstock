@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
-    - ninja # [win]
+    - ninja  # [win]
     - cmake
     - swig
 
