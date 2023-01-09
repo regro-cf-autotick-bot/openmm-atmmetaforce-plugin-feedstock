@@ -12,6 +12,8 @@ source:
 build:
   number: 1
   skip: true  # [not linux64 and not win64]
+  # OpenMM packages for Windows and Python 3.10 are broken
+  skip: true  # [win and py==310]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
     # TODO: Relax max_pin at version 1.0 / stable API
