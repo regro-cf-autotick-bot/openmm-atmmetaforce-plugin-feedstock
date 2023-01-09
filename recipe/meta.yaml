@@ -24,7 +24,7 @@ requirements:
     - {{ compiler('cuda') }}
     - ninja  # [win]
     - cmake
-    - swig
+    - swig <4.1
 
   host:
     - python
