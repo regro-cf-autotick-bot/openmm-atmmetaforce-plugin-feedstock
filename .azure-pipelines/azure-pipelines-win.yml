@@ -8,26 +8,14 @@ jobs:
     vmImage: windows-2019
   strategy:
     matrix:
-      win_64_cuda_compiler_version10.2python3.8.____cpython:
-        CONFIG: win_64_cuda_compiler_version10.2python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_cuda_compiler_version10.2python3.9.____cpython:
         CONFIG: win_64_cuda_compiler_version10.2python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_cuda_compiler_version11.0python3.8.____cpython:
-        CONFIG: win_64_cuda_compiler_version11.0python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_cuda_compiler_version11.0python3.9.____cpython:
         CONFIG: win_64_cuda_compiler_version11.0python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_cuda_compiler_version11.1python3.8.____cpython:
-        CONFIG: win_64_cuda_compiler_version11.1python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_cuda_compiler_version11.1python3.9.____cpython:
         CONFIG: win_64_cuda_compiler_version11.1python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_cuda_compiler_version11.2python3.8.____cpython:
-        CONFIG: win_64_cuda_compiler_version11.2python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_cuda_compiler_version11.2python3.9.____cpython:
         CONFIG: win_64_cuda_compiler_version11.2python3.9.____cpython
