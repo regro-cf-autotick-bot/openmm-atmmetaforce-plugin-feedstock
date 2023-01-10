@@ -31,7 +31,7 @@ requirements:
 
   host:
     - python
-    - openmm
+    - openmm 7.7
     - pthread-stubs
     - lxml
 
