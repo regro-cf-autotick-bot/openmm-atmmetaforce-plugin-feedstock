@@ -12,3 +12,5 @@ cmake %SRC_DIR% -G Ninja ^
                 || exit /B 1
 
 cmake --build . || exit /B 1
+cmake --install . || exit /B 1
+cmake --build . -- PythonInstall || exit /B 1
