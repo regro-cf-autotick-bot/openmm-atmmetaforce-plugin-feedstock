@@ -38,13 +38,8 @@ requirements:
     - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}
 
 test:
-  requires:
-    - pocl  # [unix]
-    - pip
   imports:
-    - simtk
-    - openmm
-    - numpy
+    - atmmetaforce
 
 about:
   home: https://github.com/Gallicchio-Lab/openmm-atmmetaforce-plugin.git
