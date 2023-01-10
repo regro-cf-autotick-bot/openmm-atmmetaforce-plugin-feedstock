@@ -12,7 +12,8 @@ source:
 build:
   number: 1
   skip: true  # [not linux64 and not win64]
-  # OpenMM packages for Windows and Python 3.10 are broken
+  # Skip bronken OpenMM packages for Windows
+  skip: true  # [win and py==38]
   skip: true  # [win and py==310]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
