@@ -25,21 +25,17 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
+    - make  # [linux]
     - ninja  # [win]
     - cmake
     - swig <4.1
 
   host:
-    - python
     - openmm 7.7
-    - pthread-stubs
-    - lxml
 
   run:
-    - python
-    - numpy
     # openmm package is missing a run_export as of 9 June 2022
-    - {{ pin_compatible('openmm') }}
+    - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}
 
 test:
   requires:
