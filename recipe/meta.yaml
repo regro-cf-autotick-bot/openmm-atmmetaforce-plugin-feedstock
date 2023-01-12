@@ -10,6 +10,7 @@ source:
   sha256: 9404a368c0d7b3e131904f23146b405c7913ede8009ef0584246ae7c889d2652
   patches:
     - 0001-Fix-the-plugin-path.patch
+    - 0002-Switch-to-setuptools.patch
 
 build:
   number: 1
@@ -34,6 +35,7 @@ requirements:
 
   host:
     - openmm 7.7
+    - setuptools
 
   run:
     # openmm package is missing a run_export as of 9 June 2022
