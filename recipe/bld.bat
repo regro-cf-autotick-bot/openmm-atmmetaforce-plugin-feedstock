@@ -14,3 +14,6 @@ cmake %SRC_DIR% -G Ninja ^
 cmake --build . || exit /B 1
 cmake --install . || exit /B 1
 cmake --build . -- PythonInstall || exit /B 1
+
+set ACTION=activate
+copy %RECIPE_DIR%\%ACTION%.bat %PREFIX%\etc\conda\%ACTION%.d\%PKG_NAME%_%ACTION%.bat
