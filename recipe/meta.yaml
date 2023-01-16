@@ -12,6 +12,7 @@ source:
     - 0001-Fix-the-plugin-path.patch
     - 0002-Switch-to-setuptools.patch
     - 0003-Fix-setup.py-install.patch
+    - 0004-Fix-OpenCL-linking.patch
 
 build:
   number: 1
