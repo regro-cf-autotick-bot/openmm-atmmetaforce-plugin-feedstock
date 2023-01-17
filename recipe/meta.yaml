@@ -37,11 +37,13 @@ requirements:
 
   host:
     - openmm 7.7
+    - python
     - setuptools
 
   run:
     # openmm package is missing a run_export as of 9 June 2022
     - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}
+    - python
 
 test:
   imports:
