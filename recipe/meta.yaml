@@ -8,10 +8,18 @@ package:
 source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 9404a368c0d7b3e131904f23146b405c7913ede8009ef0584246ae7c889d2652
+  patches:
+    - 0001-Fix-the-plugin-path.patch
+    - 0002-Switch-to-setuptools.patch
+    - 0003-Fix-setup.py-install.patch
+    - 0004-Fix-OpenCL-linking.patch
 
 build:
-  number: 0
-  skip: true  # [not linux64]
+  number: 1
+  skip: true  # [not linux64 and not win64]
+  # Skip bronken OpenMM packages for Windows
+  skip: true  # [win and py==38]
+  skip: true  # [win and py==310]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   run_exports:
     # TODO: Relax max_pin at version 1.0 / stable API
@@ -21,37 +29,25 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}  # [linux]
+    - {{ compiler('cuda') }}
+    - make  # [linux]
+    - ninja  # [win]
     - cmake
-    - swig
+    - swig <4.1
 
   host:
+    - openmm 7.7
     - python
-    - openmm
-    - pthread-stubs
-    - lxml
+    - setuptools
 
   run:
-    - python
-    - numpy
     # openmm package is missing a run_export as of 9 June 2022
-    - {{ pin_compatible('openmm') }}
+    - {{ pin_compatible('openmm', min_pin='x.x', max_pin='x.x') }}
+    - python
 
 test:
-  requires:
-    - pocl  # [unix]
-    - pip
   imports:
-    - simtk
-    - openmm
-    - numpy
-  commands:
-    - pip check
-    - test -f $PREFIX/lib/plugins/libATMMetaForcePluginCUDA$SHLIB_EXT  # [unix]
-    - test -f $PREFIX/lib/plugins/libATMMetaForcePluginOpenCL$SHLIB_EXT  # [unix]
-    - test -f $PREFIX/lib/plugins/libATMMetaForcePluginReference$SHLIB_EXT  # [unix]
-    - test -f $PREFIX/include/ATMMetaForce.h  # [unix]
-    - test -f $PREFIX/include/internal/ATMMetaForceImpl.h  # [unix]
+    - atmmetaforce
 
 about:
   home: https://github.com/Gallicchio-Lab/openmm-atmmetaforce-plugin.git
