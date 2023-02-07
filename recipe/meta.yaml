@@ -40,7 +40,7 @@ requirements:
     - swig
 
   host:
-    - openmm 7.7
+    - openmm
     - python
     - setuptools
 
