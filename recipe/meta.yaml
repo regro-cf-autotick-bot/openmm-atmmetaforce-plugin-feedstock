@@ -13,6 +13,7 @@ source:
     - 0002-Switch-to-setuptools.patch
     - 0003-Fix-setup.py-install.patch
     - 0004-Fix-OpenCL-linking.patch
+    - 0005-Fix-for-SWIG-4.1.patch
 
 build:
   number: 1
@@ -36,7 +37,7 @@ requirements:
     - make  # [linux]
     - ninja  # [win]
     - cmake
-    - swig <4.1
+    - swig
 
   host:
     - openmm 7.7
