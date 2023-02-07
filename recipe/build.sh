@@ -16,7 +16,3 @@ cmake --install .
 
 # Build and install Python components
 cmake --build . -- PythonInstall
-
-for lib in ${PREFIX}/lib/plugins/*${SHLIB_EXT}; do
-    ln -s $lib ${PREFIX}/lib/$(basename $lib) || true
-done

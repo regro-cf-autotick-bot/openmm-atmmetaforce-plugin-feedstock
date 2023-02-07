@@ -21,6 +21,9 @@ build:
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
+  rpaths:
+    - lib/
+    - lib/plugins/
   run_exports:
     # TODO: Relax max_pin at version 1.0 / stable API
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
