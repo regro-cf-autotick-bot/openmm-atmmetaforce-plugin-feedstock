@@ -13,14 +13,18 @@ source:
     - 0002-Switch-to-setuptools.patch
     - 0003-Fix-setup.py-install.patch
     - 0004-Fix-OpenCL-linking.patch
+    - 0005-Fix-for-SWIG-4.1.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux64 and not win64]
   # Skip bronken OpenMM packages for Windows
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
+  rpaths:
+    - lib/
+    - lib/plugins/
   run_exports:
     # TODO: Relax max_pin at version 1.0 / stable API
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
@@ -33,10 +37,10 @@ requirements:
     - make  # [linux]
     - ninja  # [win]
     - cmake
-    - swig <4.1
+    - swig
 
   host:
-    - openmm 7.7
+    - openmm
     - python
     - setuptools
 
