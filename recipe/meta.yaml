@@ -15,6 +15,7 @@ build:
   # Skip bronken OpenMM packages for Windows
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
+  skip: true  # [win and py==311]
   skip: true  # [cuda_compiler_version in (undefined, 'None')]
   rpaths:
     - lib/
