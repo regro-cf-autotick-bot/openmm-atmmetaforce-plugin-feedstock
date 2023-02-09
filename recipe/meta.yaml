@@ -1,5 +1,5 @@
 {% set name = "openmm-atmmetaforce-plugin" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 9404a368c0d7b3e131904f23146b405c7913ede8009ef0584246ae7c889d2652
+  sha256: fde821107efd4b47eed26c9eb9d07bff78ca219b3c13c796bc60253b3e61c3a1
   patches:
     - 0001-Fix-the-plugin-path.patch
     - 0002-Switch-to-setuptools.patch
@@ -16,7 +16,7 @@ source:
     - 0005-Fix-for-SWIG-4.1.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not linux64 and not win64]
   # Skip bronken OpenMM packages for Windows
   skip: true  # [win and py==38]
