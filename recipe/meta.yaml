@@ -11,12 +11,12 @@ source:
 
 build:
   number: 1
-  skip: true  # [not linux64 and not win64]
+  skip: true  # [not osx]  
+  # skip: true  # [not linux64 and not win64]
   # Skip bronken OpenMM packages for Windows
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
   skip: true  # [win and py==311]
-  skip: true  # [cuda_compiler_version in (undefined, 'None')]
   rpaths:
     - lib/
     - lib/plugins/
@@ -28,8 +28,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }}
-    - make  # [linux]
+    - {{ compiler('cuda') }} # [not linux64 and not win64]
+    - make  # [unix]
     - ninja  # [win]
     - cmake
     - swig
