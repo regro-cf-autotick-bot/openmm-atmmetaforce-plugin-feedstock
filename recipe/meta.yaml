@@ -9,13 +9,12 @@ source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: fde821107efd4b47eed26c9eb9d07bff78ca219b3c13c796bc60253b3e61c3a1
   patches:
+    # py >=3.9 builds fail on OSX if pip isn't used to install the python package
     - patches/patch-install-no-deps-osx.patch  # [osx]
 
 build:
-  number: 1
-  skip: true  # [not osx]  
-  # skip: true  # [not linux64 and not win64]
-  # Skip bronken OpenMM packages for Windows
+  number: 2
+  # Skip broken OpenMM packages for Windows
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
   skip: true  # [win and py==311]
