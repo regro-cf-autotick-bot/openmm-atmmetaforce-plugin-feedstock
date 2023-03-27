@@ -28,7 +28,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('cuda') }} # [not linux64 and not win64]
+    - {{ compiler('cuda') }}  # [linux64 or win64]
     - make  # [unix]
     - ninja  # [win]
     - cmake
