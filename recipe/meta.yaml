@@ -39,6 +39,7 @@ requirements:
   host:
     - openmm
     - python
+    - pip
     - setuptools
 
   run:
