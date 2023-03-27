@@ -9,7 +9,7 @@ source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: fde821107efd4b47eed26c9eb9d07bff78ca219b3c13c796bc60253b3e61c3a1
   patches:
-    - patches/patch-install-no-deps-osx.patch
+    - patches/patch-install-no-deps-osx.patch  # [osx]
 
 build:
   number: 1
