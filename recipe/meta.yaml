@@ -14,6 +14,7 @@ source:
 
 build:
   number: 2
+  skip: true  # [(cuda_compiler_version in (undefined, 'None') and (linux64 or win))]
   # Skip broken OpenMM packages for Windows
   skip: true  # [win and py==38]
   skip: true  # [win and py==310]
