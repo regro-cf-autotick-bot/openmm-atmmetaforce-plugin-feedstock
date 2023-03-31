@@ -1,0 +1,11 @@
+--- a/python/CMakeLists.txt	(revision cbd7a62fefee4ff07ee90248af8600ab211c8f3e)
++++ b/python/CMakeLists.txt	(date 1679937767615)
+@@ -21,7 +21,7 @@
+ set(ATMMETAFORCEPLUGIN_LIBRARY_DIR "${CMAKE_BINARY_DIR}")
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/setup.py ${CMAKE_CURRENT_BINARY_DIR}/setup.py)
+ add_custom_command(TARGET PythonInstall
+-    COMMAND "${PYTHON_EXECUTABLE}" setup.py install
++    COMMAND "${PYTHON_EXECUTABLE}" -m pip install . --no-deps -vv
+     WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+ )
+ 
