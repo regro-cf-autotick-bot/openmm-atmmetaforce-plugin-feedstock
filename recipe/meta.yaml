@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: a6e96971d9d235a821653513123d3bd9876ad2bf540700e42327f668e96502ab
-  patches:
-    # py >=3.9 builds fail on OSX if pip isn't used to install the python package
-    - patches/patch-install-no-deps-osx.patch  # [osx]
 
 build:
   number: 0
