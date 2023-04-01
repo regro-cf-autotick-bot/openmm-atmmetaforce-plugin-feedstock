@@ -1,5 +1,5 @@
 {% set name = "openmm-atmmetaforce-plugin" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name }}
@@ -7,13 +7,10 @@ package:
 
 source:
   url: https://github.com/Gallicchio-Lab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: fde821107efd4b47eed26c9eb9d07bff78ca219b3c13c796bc60253b3e61c3a1
-  patches:
-    # py >=3.9 builds fail on OSX if pip isn't used to install the python package
-    - patches/patch-install-no-deps-osx.patch  # [osx]
+  sha256: a6e96971d9d235a821653513123d3bd9876ad2bf540700e42327f668e96502ab
 
 build:
-  number: 2
+  number: 0
   skip: true  # [(cuda_compiler_version in (undefined, 'None') and (linux64 or win))]
   # Skip broken OpenMM packages for Windows
   skip: true  # [win and py==38]
